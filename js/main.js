@@ -17,7 +17,7 @@ let bgMusic = document.querySelector(".bgMusic");
 // 获取玫瑰，后面添加点击事件
 let rose = document.querySelector(".rose");
 
-
+let show = true;
 // 添加点击事件
 rose.addEventListener("click", function () {
     // 先隐藏h1和span
@@ -38,10 +38,13 @@ rose.addEventListener("click", function () {
         btn.style.display = "";
     }, 800);
     setTimeout(function () {
+        if(show)
         btn.click();
-    }, 1600);
+    }, 35000);
 })
+
 btn.addEventListener("click",function(){
+    show = false;
     setTimeout(()=>{
         clickMusic.play();
         love.style.display = "none";
