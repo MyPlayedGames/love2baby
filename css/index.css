@@ -1,0 +1,95 @@
+/* 清除默认样式 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 给body相对定位，让con以body为标准进行定位 */
+body {
+    position: relative;
+    /* 设置最小高度为一整个视口的高度 */
+    min-height: 100vh;
+
+}
+
+/* 使用绝对定位，相对于body定位，居中
+同时开启 flex布局，默认x轴为主轴，使用
+justify-content: center;即x轴居中 */
+.con {
+    position: absolute;
+    bottom: 300px;
+    width: 500px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+
+}
+
+.con .close {
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+}
+.con .love {
+    position: absolute;
+    bottom: 120px;
+    width: 150%;
+    height: 600px;
+}
+.con .rose {
+    position: absolute;
+    bottom: 70px;
+    width: 50px;
+    height: 50px;
+    /* 玫瑰是要点的，设置鼠标样式为小手 */
+    cursor: pointer;
+}
+.con .btn {
+    position: absolute;
+    bottom: -50px;
+    width: 160px;
+    height: 60px;
+    /* 玫瑰是要点的，设置鼠标样式为小手 */
+    cursor: pointer;
+}
+.con h1 {
+    position: absolute;
+    bottom: 170px;
+    font-size: 18px;
+    color: #444;
+}
+
+.con span {
+    position: absolute;
+    bottom: 140px;
+    font-size: 14px;
+    color: #666;
+}
+
+/* 清除audio可能的占位问题 */
+audio {
+    width: 0;
+    height: 0;
+}
+
+/* 媒体查询，简单兼容手机端，起飞 */
+@media screen and (max-width: 540px) {
+    .con {
+        width: 100vw;
+    }
+
+    .con .rose {
+        bottom: 60px;
+    }
+
+    .con h1 {
+        bottom: 150px;
+    }
+
+    .con span {
+        bottom: 120px;
+    }
+}
+
