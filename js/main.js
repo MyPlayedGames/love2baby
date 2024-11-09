@@ -47,10 +47,19 @@ btn.addEventListener("click",function(){
     show = false;
     setTimeout(()=>{
         clickMusic.play();
-        love.style.display = "none";
+        love.style.display = "";
     },100);
     setTimeout(() => {
-        love.style.display = "";
+        moveLeft();
+        moveRight();
     },300);
 });
 
+function moveLeft(){
+    btn.classList.add("move-left");
+    img1.classList.add("move-left");
+    rose.classList.add("move-left");
+}
+function moveRight(){
+    love.classList.add("move-right");
+}

@@ -12,19 +12,44 @@ body {
     min-height: 100vh;
 
 }
-
+iframe{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
 /* 使用绝对定位，相对于body定位，居中
 同时开启 flex布局，默认x轴为主轴，使用
 justify-content: center;即x轴居中 */
+.zlili{
+    position: absolute;
+    bottom: 15px;
+    right: 20px;
+    width: 150px;
+    height:50px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    align-content:center;
+    text-align: center;
+    color: #666;
+    border-radius: 5px;
+}
+.zlili:hover{
+    animation: shake 1s ease-in-out;
+}
+@keyframes shake {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    50% { transform: translateX(5px); }
+    100% { transform: translateX(0); }
+  }
 .con {
     position: absolute;
-    bottom: 300px;
+    bottom: 250px;
     width: 500px;
     left: 50%;
     transform: translateX(-50%);
     display: flex;
     justify-content: center;
-
+    
 }
 
 .con .close {
@@ -32,12 +57,25 @@ justify-content: center;即x轴居中 */
     bottom: 0px;
     width: 100%;
 }
+
 .con .love {
     position: absolute;
-    bottom: 120px;
-    width: 150%;
-    height: 600px;
+    bottom: -150px;
+    width: 700px;
+    height: 800px;
+    box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px, rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
 }
+
+.move-right{
+    transition: all 800ms linear;
+    transform: translateX(310px);
+}
+
+.move-left{
+    transition: all 800ms linear;
+    transform: translateX(-310px);
+}
+
 .con .rose {
     position: absolute;
     bottom: 70px;
@@ -48,7 +86,7 @@ justify-content: center;即x轴居中 */
 }
 .con .btn {
     position: absolute;
-    bottom: -50px;
+    bottom: -70px;
     width: 160px;
     height: 60px;
     /* 玫瑰是要点的，设置鼠标样式为小手 */
@@ -67,6 +105,7 @@ justify-content: center;即x轴居中 */
     font-size: 14px;
     color: #666;
 }
+
 
 /* 清除audio可能的占位问题 */
 audio {
